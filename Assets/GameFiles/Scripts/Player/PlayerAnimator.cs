@@ -44,5 +44,15 @@ public class PlayerAnimator : MonoBehaviour
     {
         anim.Play("Idle");
     }
+
+    public void PlaySowAnimation()
+    {
+        anim.SetLayerWeight(1, 1);
+    }
+
+    public void StopSowAniamtion()
+    {
+        anim.SetLayerWeight(1, 0);
+    }
     #endregion
 }

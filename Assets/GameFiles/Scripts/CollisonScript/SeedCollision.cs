@@ -24,8 +24,6 @@ public class SeedCollision : MonoBehaviour
         for (int i = 0; i < collisionAmt; i++)
         {
             collisionPos[i] = collisonEvent[i].intersection;
-            Debug.Log("Positions" + collisionPos[i]);
-
         }
 
         SeedCollidedEvent?.Invoke(collisionPos);
