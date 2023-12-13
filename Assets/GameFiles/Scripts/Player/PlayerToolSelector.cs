@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,10 @@ public class PlayerToolSelector : MonoBehaviour
     private Tool toolState;
     [SerializeField] private Image[] toolsImage;
     [SerializeField] private Color selectedColor;
+
+
+    [Header("Events")]
+    public Action<Tool> SelectedTool;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +41,7 @@ public class PlayerToolSelector : MonoBehaviour
         {
             toolsImage[i].color = i == toolIndex ? selectedColor : Color.white;
         }
+        SelectedTool?.Invoke(toolState);
     }
 
     public bool CanSow()
