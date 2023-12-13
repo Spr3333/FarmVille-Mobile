@@ -8,6 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     [Header("Elements")]
     private Animator anim;
     [SerializeField] private float moveFactor;
+    [SerializeField] private ParticleSystem waterFx;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +54,17 @@ public class PlayerAnimator : MonoBehaviour
     public void StopSowAniamtion()
     {
         anim.SetLayerWeight(1, 0);
+    }
+
+    public void PlayWaterAnimation()
+    {
+        anim.SetLayerWeight(2, 1);
+    }
+
+    public void StopWaterAnimationm()
+    {
+        anim.SetLayerWeight(2, 0);
+        waterFx.Stop();
     }
     #endregion
 }

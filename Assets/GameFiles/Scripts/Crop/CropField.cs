@@ -23,12 +23,24 @@ public class CropField : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
+    #region DeveloperMode
+    [NaughtyAttributes.Button]
+    private void InstantlySowTiles()
+    {
+        for (int i = 0; i < cropTiles.Count; i++)
+        {
+            Sow(cropTiles[i]);
+        }
+    }
+
+    #endregion
 
     private void StoreTiles()
     {
-        for(int i = 0; i < tileParent.childCount; i++)
+        for (int i = 0; i < tileParent.childCount; i++)
         {
             cropTiles.Add(tileParent.GetChild(i).GetComponent<CropTile>());
         }
@@ -36,7 +48,7 @@ public class CropField : MonoBehaviour
 
     public void SeedCollidedCallBack(Vector3[] seedPos)
     {
-        for(int i=0; i < seedPos.Length; i++)
+        for (int i = 0; i < seedPos.Length; i++)
         {
             CropTile closestCropTile = GetClosestTile(seedPos[i]);
 
