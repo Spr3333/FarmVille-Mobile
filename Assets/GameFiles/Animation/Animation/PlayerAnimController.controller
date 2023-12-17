@@ -142,7 +142,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Watering
     m_StateMachine: {fileID: -7934138928830563506}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: 61cc6868f6405bf4cbc8a59d1d1f9f19, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0

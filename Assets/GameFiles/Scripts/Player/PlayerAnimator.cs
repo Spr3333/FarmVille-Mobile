@@ -61,7 +61,7 @@ public class PlayerAnimator : MonoBehaviour
         anim.SetLayerWeight(2, 1);
     }
 
-    public void StopWaterAnimationm()
+    public void StopWaterAnimation()
     {
         anim.SetLayerWeight(2, 0);
         waterFx.Stop();

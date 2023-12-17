@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cropParent: {fileID: 5168275670953265826}
+  rend: {fileID: 1581606384729549299}
 --- !u!1 &8605894394758473129
 GameObject:
   m_ObjectHideFlags: 0

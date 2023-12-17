@@ -22,7 +22,10 @@ public class WaterCollison : MonoBehaviour
         for (int i = 0; i < collisionAmt; i++)
         {
             collisionPos[i] = collisionEvents[i].intersection;
+            //Debug.Log("Position:" + collisionPos[i]);
         }
+
+        
 
         OnWaterCollided?.Invoke(collisionPos);
     }

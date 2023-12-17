@@ -428,7 +428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29225934, y: 0.000000016455138, z: -0.000000005028726, w: 0.9563391}
+  m_LocalRotation: {x: 0.29225937, y: -0.000000016455134, z: 0.0000000050287263, w: 0.9563391}
   m_LocalPosition: {x: 0, y: 13, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1790,7 +1790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404616964}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29225934, y: 0.000000016455138, z: -0.000000005028726, w: 0.9563391}
+  m_LocalRotation: {x: 0.29225937, y: -0.000000016455134, z: 0.0000000050287263, w: 0.9563391}
   m_LocalPosition: {x: 0, y: 13, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2024,6 +2024,7 @@ GameObject:
   - component: {fileID: 1719264859}
   - component: {fileID: 1719264860}
   - component: {fileID: 1719264861}
+  - component: {fileID: 1719264862}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2131,6 +2132,18 @@ MonoBehaviour:
   - {fileID: 851337618}
   - {fileID: 1789540920}
   selectedColor: {r: 1, g: 0.8352941, b: 0, a: 1}
+--- !u!114 &1719264862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719264855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ae5aea7ec619a4b868dad20cbce512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1719888664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,6 +3026,7 @@ GameObject:
   - component: {fileID: 2147180849}
   - component: {fileID: 2147180851}
   - component: {fileID: 2147180850}
+  - component: {fileID: 2147180852}
   m_Layer: 0
   m_Name: WaterFX
   m_TagString: Untagged
@@ -6873,7 +6887,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -7833,6 +7847,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &2147180852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147180848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93e8016ea11ec14aa2e25f93f01cc48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &291624351478403472
 GameObject:
   m_ObjectHideFlags: 0
