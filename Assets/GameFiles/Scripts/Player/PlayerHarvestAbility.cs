@@ -9,6 +9,11 @@ public class PlayerHarvestAbility : MonoBehaviour
     PlayerToolSelector toolSelector;
     PlayerAnimator anim;
     private CropField currentCropField;
+
+
+    [Header("Settings")]
+    [SerializeField] private bool canHarvest;
+    [SerializeField] private Transform harvestSphere;
     // Start is called before the first frame update
     void Start()
     {
@@ -82,6 +87,19 @@ public class PlayerHarvestAbility : MonoBehaviour
             if (currentCropField == null)
                 currentCropField = cropField;
             anim.PlayHarvestAnimation();
+
+            if (canHarvest)
+                currentCropField.Harvest(harvestSphere);
         }
+    }
+
+    public void StartHarvestCallBack()
+    {
+        canHarvest = true;
+    }
+
+    public void StopHarvestCallback()
+    {
+        canHarvest = false;
     }
 }

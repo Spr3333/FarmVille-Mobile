@@ -20,6 +20,7 @@ public class CropField : MonoBehaviour
     private TileFieldState state;
     private int tileSown;
     private int tileWatered;
+    private int tileHarvested;
 
     // Start is called before the first frame update
     void Start()
@@ -62,7 +63,7 @@ public class CropField : MonoBehaviour
         }
     }
 
-    #region Sowing Perocess
+    #region Sowing Process
     public void SeedCollidedCallBack(Vector3[] seedPos)
     {
         for (int i = 0; i < seedPos.Length; i++)
@@ -114,7 +115,7 @@ public class CropField : MonoBehaviour
     {
         tileWatered++;
         cropTile.Water();
-        if(tileWatered == cropTiles.Count)
+        if (tileWatered == cropTiles.Count)
         {
             FieldFullyWatered();
         }
@@ -124,6 +125,46 @@ public class CropField : MonoBehaviour
     {
         state = TileFieldState.Watered;
         FieldfullyWatered?.Invoke(this);
+    }
+    #endregion
+
+    #region Harvest Process
+    public void Harvest(Transform harvestSphere)
+    {
+        float harvestRad = harvestSphere.localScale.x;
+
+        for (int i = 0; i < cropTiles.Count; i++)
+        {
+            if (cropTiles[i].IsEmpty())
+                continue;
+
+            float distance = Vector3.Distance(cropTiles[i].transform.position , harvestSphere.transform.position);
+
+            if(distance <= harvestRad)
+                HarvestTile(cropTiles[i]);
+        }
+
+    }
+
+    private void HarvestTile(CropTile cropTile)
+    {
+        cropTile.Harvest();
+
+        tileHarvested++;
+
+        if(tileHarvested == cropTiles.Count)
+        {
+            FieldfullyHarvested();
+        }
+    }
+
+    private void FieldfullyHarvested()
+    {
+        tileSown = 0;
+        tileWatered = 0;
+        tileHarvested = 0;
+        state = TileFieldState.Empty;
+        FieldFullyHarvested?.Invoke(this);
     }
     #endregion
 

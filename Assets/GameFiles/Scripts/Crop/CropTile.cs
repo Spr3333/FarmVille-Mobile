@@ -41,6 +41,15 @@ public class CropTile : MonoBehaviour
         crop.ScaleUp();
     }
 
+    public void Harvest()
+    {
+        Debug.Log("Working");
+
+        rend.gameObject.LeanColor(Color.white, 2);
+        state = TileFieldState.Empty;
+        crop.ScaleDown();
+    }
+
     public bool IsEmpty()
     {
         return state == TileFieldState.Empty;
