@@ -73,6 +73,8 @@ public class PlayerWaterAbility : MonoBehaviour
     {
         if (toolSelector.CanWater() && cropField.IsSown())
         {
+            if (currentCropField == null)
+                currentCropField = cropField;
             anim.PlayWaterAnimation();
         }
     }

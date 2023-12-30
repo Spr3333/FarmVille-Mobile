@@ -9,6 +9,7 @@ public class CropField : MonoBehaviour
     [Header("Events")]
     public static Action<CropField> FieldfullySown;
     public static Action<CropField> FieldfullyWatered;
+    public static Action<CropField> FieldFullyHarvested;
 
     [Header("Elements")]
     [SerializeField] private Transform tileParent;
@@ -155,5 +156,10 @@ public class CropField : MonoBehaviour
     public bool IsSown()
     {
         return state == TileFieldState.Sown;
+    }
+
+    public bool IsWatered()
+    {
+        return state == TileFieldState.Watered;
     }
 }

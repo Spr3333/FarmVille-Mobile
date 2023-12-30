@@ -18,13 +18,13 @@ public class PlayerAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     #region Animation
     public void ManageAnimation(Vector3 moveVector)
     {
-        if(moveVector.magnitude > 0)
+        if (moveVector.magnitude > 0)
         {
             anim.SetFloat("moveFactor", moveVector.magnitude * moveFactor);
             PlayRunAnimation();
@@ -65,6 +65,16 @@ public class PlayerAnimator : MonoBehaviour
     {
         anim.SetLayerWeight(2, 0);
         waterFx.Stop();
+    }
+
+    public void PlayHarvestAnimation()
+    {
+        anim.SetLayerWeight(3, 1);
+    }
+
+    public void StopHarvestAnimation()
+    {
+        anim.SetLayerWeight(3, 0);
     }
     #endregion
 }
