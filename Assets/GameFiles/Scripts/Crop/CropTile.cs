@@ -1,21 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TileFieldState
-{
-    Empty,
-    Sown,
-    Watered
-}
+
 public class CropTile : MonoBehaviour
 {
+
+
+    [Header("Events")]
+    public static Action<CropType> OnCropHarvested;
 
     [Header("Elements")]
     private TileFieldState state;
     private Crop crop;
     [SerializeField] private Transform cropParent;
     [SerializeField] private MeshRenderer rend;
+    [SerializeField] private CropData cropdata;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +49,7 @@ public class CropTile : MonoBehaviour
         rend.gameObject.LeanColor(Color.white, 2);
         state = TileFieldState.Empty;
         crop.ScaleDown();
+        OnCropHarvested?.Invoke(cropdata.cropType);
     }
 
     public bool IsEmpty()
