@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cropPrefab: {fileID: 6276862394724329667, guid: 0c80f3ee51797d74fab5294237004caa,
     type: 3}
+  cropType: 0
+  icon: {fileID: 21300000, guid: 82b1f675f4ea8fb4c8b63b1df1418228, type: 3}

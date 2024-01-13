@@ -8,4 +8,5 @@ public class CropData : ScriptableObject
     [SerializeField]
     public Crop cropPrefab;
     public CropType cropType;
+    public Sprite icon;
 }

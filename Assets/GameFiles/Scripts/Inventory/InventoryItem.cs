@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class InventoryItem
 {
     public CropType CropType;
     public int amount;
-    [TextArea(0, 25)]
-    public string description;
 
     public InventoryItem(CropType cropType, int amount)
     {

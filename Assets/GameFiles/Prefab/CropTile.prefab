@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cropParent: {fileID: 5168275670953265826}
   rend: {fileID: 1581606384729549299}
+  cropdata: {fileID: 11400000, guid: a371a28e41421744badf3df20aa12e28, type: 2}
 --- !u!1 &8605894394758473129
 GameObject:
   m_ObjectHideFlags: 0

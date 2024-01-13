@@ -16,7 +16,7 @@ public class CropTile : MonoBehaviour
     private Crop crop;
     [SerializeField] private Transform cropParent;
     [SerializeField] private MeshRenderer rend;
-    [SerializeField] private CropData cropdata;
+     private CropData cropdata;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +29,13 @@ public class CropTile : MonoBehaviour
 
     }
 
+    #region Planting Process
+
     public void Sow(CropData cropData)
     {
         state = TileFieldState.Sown;
         crop = Instantiate(cropData.cropPrefab, this.transform.position, Quaternion.identity, cropParent);
+        this.cropdata = cropData;
     }
 
     public void Water()
@@ -44,18 +47,15 @@ public class CropTile : MonoBehaviour
 
     public void Harvest()
     {
-        Debug.Log("Working");
-
         rend.gameObject.LeanColor(Color.white, 2);
         state = TileFieldState.Empty;
         crop.ScaleDown();
         OnCropHarvested?.Invoke(cropdata.cropType);
     }
-
+    #endregion
     public bool IsEmpty()
     {
-        return state == TileFieldState.Empty;
-        
+        return state == TileFieldState.Empty;        
     }
 
     public bool IsSown()

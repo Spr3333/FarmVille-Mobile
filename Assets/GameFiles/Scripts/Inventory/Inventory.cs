@@ -4,10 +4,38 @@ using UnityEngine;
 
 public class Inventory
 {
-    private List<InventoryItem> items = new List<InventoryItem>();
+    [SerializeField]private List<InventoryItem> items = new List<InventoryItem>();
 
     public void CropHarvestedCallBack(CropType croptype)
     {
-        Debug.Log("Crop Harvested");
+        bool cropFound = false;
+
+        for(int i = 0; i< items.Count; i++)
+        {
+            if(croptype == items[i].CropType)
+            {
+                cropFound = true;
+                items[i].amount += 1;
+            }
+        }
+
+        //DebugInventory();
+        if (cropFound)
+            return;
+
+        items.Add(new InventoryItem(croptype, 1));
+    }
+
+    public InventoryItem[] GetItems()
+    {
+        return items.ToArray();
+    }
+
+    public void DebugInventory()
+    {
+        foreach(InventoryItem item in items)
+        {
+            Debug.Log("We Have " + item.amount + " in" +  item.CropType + " List");
+        }
     }
 }
