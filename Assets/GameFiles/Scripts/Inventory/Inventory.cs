@@ -38,4 +38,9 @@ public class Inventory
             Debug.Log("We Have " + item.amount + " in" +  item.CropType + " List");
         }
     }
+
+    public void Clearinventory()
+    {
+        items.Clear();
+    }
 }

@@ -1,12 +1,3 @@
 {
-    "items": [
-        {
-            "CropType": 0,
-            "amount": 42
-        },
-        {
-            "CropType": 1,
-            "amount": 18
-        }
-    ]
+    "items": []
 }

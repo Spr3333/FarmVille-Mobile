@@ -53,9 +53,22 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    [NaughtyAttributes.Button]
+    public void ClearInventory()
+    {
+        inventory.Clearinventory();
+        inventoryDisplay.UpdateDisplay(inventory);
+        SaveInventory();
+    }
+
     private void SaveInventory()
     {
         string data = JsonUtility.ToJson(inventory, true);
         File.WriteAllText(Application.dataPath + "/inventory.txt", data);
+    }
+
+    public Inventory GetInventory()
+    {
+        return inventory;
     }
 }

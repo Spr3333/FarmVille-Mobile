@@ -41,4 +41,16 @@ public class DataManager : MonoBehaviour
         Debug.Log("Crop Icon Could Not Be Found");
         return null;
     }
+
+    public int GetCropPrice(CropType cropType)
+    {
+        for (int i = 0; i < cropData.Length; i++)
+        {
+            if (cropData[i].cropType == cropType)
+                return cropData[i].SellPrice;
+        }
+
+        Debug.Log("No Crop Found In Your Possesion. Go Grow Some Crops!!");
+        return 0;
+    }
 }
